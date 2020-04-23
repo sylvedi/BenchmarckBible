@@ -13,7 +13,7 @@
                     {
                         id = c.Int(nullable: false, identity: true),
                         testament = c.String(),
-                        book = c.String(maxLength: 100),
+                        book = c.String(),
                         verse = c.Int(nullable: false),
                         chapter = c.Int(nullable: false),
                         vtext = c.String(),
