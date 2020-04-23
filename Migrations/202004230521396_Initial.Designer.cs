@@ -13,7 +13,7 @@ namespace BenchmarckBible.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202004230105546_Initial"; }
+            get { return "202004230521396_Initial"; }
         }
         
         string IMigrationMetadata.Source

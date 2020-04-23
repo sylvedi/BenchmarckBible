@@ -12,11 +12,11 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        testament = c.String(),
-                        book = c.String(),
+                        testament = c.String(maxLength: 14),
+                        book = c.String(nullable: false, maxLength: 30),
                         verse = c.Int(nullable: false),
                         chapter = c.Int(nullable: false),
-                        vtext = c.String(),
+                        vtext = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.id);
             
