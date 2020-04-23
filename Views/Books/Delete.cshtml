@@ -1,0 +1,64 @@
+﻿@model BenchmarckBible.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.testament)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testament)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.book)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.verse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.verse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chapter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chapter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vtext)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vtext)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

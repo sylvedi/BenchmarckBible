@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BenchmarckBible.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Add a Bible Verse to save the day</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm())
+    {
+        <p>
+        Book: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" /> </p>
+    }   
+</p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.testament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.verse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chapter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vtext)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.testament)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.verse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.chapter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vtext)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                    @* @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                         |
+                     @Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                </td>
+            </tr>
+        }
+
+    </table>
